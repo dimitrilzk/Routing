@@ -58,7 +58,7 @@ app.UseEndpoints(endpoints =>
         string? extension = Convert.ToString(context.Request.RouteValues["extension"]);
         await context.Response.WriteAsync($"In files: {fileName}.{extension}");
     });
-    endpoints.Map("product/detail/{id?}", async context =>
+    endpoints.Map("product/detail/{id:int?}", async context =>
     {
         int? id = Convert.ToInt32(context.Request.RouteValues["id"]);
         await context.Response.WriteAsync($"Product detail: {id}");
